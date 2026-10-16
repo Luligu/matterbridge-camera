@@ -1,0 +1,8 @@
+{
+  "name": "matterbridge-camera",
+  "type": "DynamicPlatform",
+  "autoInstallFfmpeg": true,
+  "cameras": {},
+  "debug": false,
+  "unregisterOnShutdown": false
+}

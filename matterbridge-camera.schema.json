@@ -1,0 +1,90 @@
+{
+  "title": "Matterbridge camera plugin",
+  "description": "matterbridge-camera v. 1.0.0 by https://github.com/Luligu",
+  "type": "object",
+  "properties": {
+    "name": {
+      "description": "Plugin Name",
+      "type": "string",
+      "readOnly": true,
+      "ui:widget": "hidden"
+    },
+    "type": {
+      "description": "Plugin Type",
+      "type": "string",
+      "readOnly": true,
+      "ui:widget": "hidden"
+    },
+    "autoInstallFfmpeg": {
+      "title": "Auto install ffmpeg (Docker only)",
+      "description": "Docker only: install ffmpeg automatically if it is not found in the container. On other installations, use the Linux install button or install ffmpeg manually.",
+      "type": "boolean",
+      "default": true
+    },
+    "installFfmpeg": {
+      "title": "Install ffmpeg (Linux only)",
+      "description": "Install ffmpeg now on Linux. Requires root privileges and apk (Alpine) or apt-get (Debian/Ubuntu). Available outside Docker too; unsupported on macOS and Windows.",
+      "type": "boolean",
+      "buttonText": "Install ffmpeg",
+      "buttonClose": true,
+      "buttonSave": false,
+      "default": false
+    },
+    "cameras": {
+      "title": "Cameras",
+      "description": "Add or remove RTSP cameras here. Use the camera name as the key. Save and restart the plugin to apply changes.",
+      "type": "object",
+      "uniqueItems": true,
+      "additionalProperties": {
+        "type": "object",
+        "description": "RTSP camera parameters:",
+        "required": ["videoSource"],
+        "properties": {
+          "videoSource": {
+            "title": "Video Source",
+            "description": "RTSP video URL, e.g. rtsp://user:password@host:554/path.",
+            "type": "string"
+          },
+          "audioSource": {
+            "title": "Audio Source",
+            "description": "RTSP audio URL. Use the video URL for audio from the same stream, or leave empty to disable audio.",
+            "type": "string",
+            "default": ""
+          },
+          "play": {
+            "type": "boolean",
+            "default": false,
+            "buttonText": "Play",
+            "description": "Preview the video URL with ffplay (not available in Docker)."
+          },
+          "videoResolution": {
+            "title": "Video Resolution",
+            "description": "Resolution used when capturing from the configured webcam or RTSP camera. auto uses the resolution requested by the controller (the allocated video stream's maxResolution) instead of a fixed value.",
+            "type": "string",
+            "enum": ["auto", "640x480", "1280x720", "1920x1080"],
+            "default": "auto"
+          },
+          "videoBitrate": {
+            "title": "Video Bitrate",
+            "description": "Target encoder bitrate (kbps) used when capturing from the configured webcam or RTSP camera, regardless of resolution. Default is 1000. Suggested values: ~800 for 640x480, ~2000 for 1280x720, ~2500 for 1920x1080.",
+            "type": "number",
+            "default": 1000,
+            "minimum": 1
+          }
+        }
+      }
+    },
+    "debug": {
+      "title": "Enable Debug",
+      "description": "Enable the debug for the plugin (development only)",
+      "type": "boolean",
+      "default": false
+    },
+    "unregisterOnShutdown": {
+      "title": "Unregister On Shutdown",
+      "description": "Unregister all devices on shutdown (development only)",
+      "type": "boolean",
+      "default": false
+    }
+  }
+}
