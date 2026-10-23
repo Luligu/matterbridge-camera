@@ -23,7 +23,7 @@
 
 This plugin is for network cameras that provide an RTSP stream. It exposes manually configured RTSP cameras as Matter cameras. For local cameras connected to the Matterbridge host, such as USB webcams and built-in cameras, use [matterbridge-webcam](https://github.com/Luligu/matterbridge-webcam).
 
-Requires Matterbridge 3.10.14 or newer and ffmpeg.
+Requires Matterbridge 3.11.0 or newer and ffmpeg.
 
 Features:
 
