@@ -32,6 +32,28 @@ If you like this project and find it useful, please consider giving it a star on
 
 ## [1.0.2] - Dev branch
 
+### Added
+
+- [agents]: Add `SHARED-AGENTS.md` documenting the shared agent setup.
+- [toolchain]: Add `TOOLCHAIN.md` v.1.0.1 documenting the native toolchain.
+
+### Changed
+
+- [agents]: Update `AGENTS.md` to v.1.0.8 and `.github/commit-message-instructions.md` to v.1.0.1 with commit sign-off guidance.
+- [agents]: Update the shared `plugin-frontend` rules and their Claude and Copilot wrappers to v.1.0.2 with Home Assistant Ingress and trailing-slash guidance.
+- [codex]: Update `.codex/config.toml` to v.1.0.6.
+- [vscode]: Update `.vscode/settings.json` to v.1.0.17 with automatic Git sign-off.
+- [vscode]: Update `.vscode/tasks.json` to pack local dependencies and download Docker installation scripts before running them.
+- [docs]: Update `CONTRIBUTING.md` to v.1.0.1 and version `CODE_OF_CONDUCT.md` as v.1.0.0.
+- [scripts]: Update `scripts/downloads.mjs` to v.2.2.0 with explicit date ranges and pending download counts.
+- [scripts]: Update `scripts/git-sync-dev.mjs` to v.2.1.0 to protect commits pushed from other machines.
+- [scripts]: Update `scripts/prepublish-clean.mjs` to v.2.2.0 with package metadata cleanup and grouped removal logs.
+- [package]: Delegate package metadata cleanup in `prepublishOnly` to `scripts/prepublish-clean.mjs`.
+- [package]: Bump `@types/node` to v.26.6.6.
+- [package]: Bump `oxfmt` to v.0.75.0.
+- [package]: Bump `oxlint` to v.1.90.0.
+- [package]: Bump `oxlint-tsgolint` to v.7.0.2005.
+
 <a href="https://www.buymeacoffee.com/luligugithub"><img src="https://matterbridge.io/assets/bmc-button.svg" alt="Buy me a coffee" width="80"></a>
 
 ## [1.0.1] - 2026-10-23
